@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corsi Memory Test Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+    <header>
+        <h1>Corsi Memory Test Tutorial</h1>
+    </header>
+    <main>
+        <section id="instructions">
+            <h2>Instructions</h2>
+                    <div class="user-id-input">
+            <label for="userId">Enter Your ID:</label>
+            <input type="text" id="userId" name="userId">
+        </div>
+            <p>
+                Welcome to the Corsi Memory Test! In this test, you will see a sequence of blocks being highlighted one by one.
+                Your goal is to memorize and reproduce this sequence by clicking the blocks in the same order. The following video is a visual illustration of what we mean:
+            </p>
+            <center>
+                <video src="InstructionalVideo.mp4" autoplay loop muted controls id="recursive-video"></video>
+            </center>
+            <p>
+                The game starts with a sequence length of two, and the sequence length will increase by one for each round you complete correctly.
+                If you make two mistakes in a row, the game is over. Your final score is the length of the longest sequence you successfully remember.
+            </p>
+        </section>
+        <button id="startTestButton" class="start-test">Proceed to Test</button>
+
+    </main>
+<script src="intro.js"></script>
+</body>
+</html>
