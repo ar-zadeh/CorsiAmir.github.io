@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.use(express.static('public')); // Serve static files from 'public' directory
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.post('/save-user-sequence', (req, res) => {
@@ -84,9 +83,17 @@ db.run(`CREATE TABLE IF NOT EXISTS user_sequences  (
 });
 
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+
+// Serve 'password.html' for the root route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/password.html');
+    res.sendFile(__dirname + '/public/password.html');
+});
+
+// Serve static files from 'public' directory
+app.use(express.static('public'));
+
+// ... [other routes and middleware]
+
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
 });
