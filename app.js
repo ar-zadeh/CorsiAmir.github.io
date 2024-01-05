@@ -88,5 +88,5 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/password.html');
 });
